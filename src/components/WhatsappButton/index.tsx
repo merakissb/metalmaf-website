@@ -6,7 +6,7 @@ export default function WhatsAppButton() {
 
   const openWhatsApp = () => {
     // Coloca aquí el enlace de WhatsApp con el mensaje que deseas enviar
-    window.open("https://api.whatsapp.com/send?text=Hola", "_blank");
+    window.open("https://api.whatsapp.com/send?phone=+56994947370&text=Me%20gustar%C3%ADa%20saber%20m%C3%A1s%20sobre%20los%20servicios%20ofrecidos%20en%20la%20p%C3%A1gina%20Web");
   };
 
   useEffect(() => {
