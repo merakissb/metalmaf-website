@@ -23,6 +23,15 @@
       }
     ]
   },
-  "include": ["next-env.d.ts", ".next/types/**/*.ts", "**/*.ts", "**/*.tsx", "src/api/contact/hello.tsllo.src/api/contact/contact.tst/contact, "src/app/api/hello/route.js".ts", "src/app/api/contact/contact.tjs"],
+  "include": [
+    "next-env.d.ts",
+    ".next/types/**/*.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    "src/api/contact/hello.ts",
+    "src/api/contact/contact.ts",
+    "src/app/api/hello/route.ts",
+    "src/app/api/contact/contact.ts"
+  ],
   "exclude": ["node_modules"]
 }
