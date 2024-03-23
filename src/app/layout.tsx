@@ -32,8 +32,8 @@ export default function RootLayout({
           <ScrollToTop />
           <WhatsappButton />
         </Providers>
+        <GoogleAnalytics gaId="G-47TPV214R6" />
       </body>
-      <GoogleAnalytics gaId="G-47TPV214R6" />
     </html>
   );
 }
