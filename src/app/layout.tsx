@@ -7,7 +7,7 @@ import WhatsappButton from "@/components/WhatsappButton";
 import { Inter } from "next/font/google";
 import "node_modules/react-modal-video/css/modal-video.css";
 import "../styles/index.css";
-import GoogleAnalytics from "@/components/Common/GoogleAnalytics";
+import { GoogleAnalytics } from '@next/third-parties/google'
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -26,7 +26,6 @@ export default function RootLayout({
 
       <body className={`bg-[#FCFCFC] dark:bg-black ${inter.className}`}>
         <Providers>
-          <GoogleAnalytics />
           <Header />
           {children}
           <Footer />
@@ -34,6 +33,7 @@ export default function RootLayout({
           <WhatsappButton />
         </Providers>
       </body>
+      <GoogleAnalytics gaId="G-47TPV214R6" />
     </html>
   );
 }
