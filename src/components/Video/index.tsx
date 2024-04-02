@@ -12,12 +12,12 @@ const Video = () => {
   return (
     <section className="relative z-10 py-16 md:py-20 lg:py-28">
       <div className="container">
-        <SectionTitle
+        {/* <SectionTitle
           title="Cada detalle cuenta para entregar el mejor servicio"
           paragraph=''
           center
           mb="50px"
-        />
+        /> */}
 
         <div className="-mx-4 flex flex-wrap">
           <div className="w-full px-4">
@@ -54,7 +54,7 @@ const Video = () => {
         autoplay={true}
         start={true}
         isOpen={isOpen}
-        videoId="H4NiN0Nyb-A"
+        videoId="5g2asQ4n8_0"
         onClose={() => setOpen(false)}
       />
 

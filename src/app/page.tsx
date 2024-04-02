@@ -13,8 +13,8 @@ import { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "MAF",
-  description: "This is Home for Startup Nextjs Template",
-  // other metadata
+  description: "Somo una empresa Chilena dedicada a la manufactura de productos metálicos. Ofrecemos servicios de corte laser, plegados, matrices, soldadura Laser / MIG /TIG.",
+  keywords: ["manufactura", "corte laser", "plegados", "matrices", "soldadura", "MAF", "Chile"]
 };
 
 export default function Home() {
