@@ -1,7 +1,5 @@
-// api/example.js
-import { NextResponse } from "next/server";
+import { NextResponse } from 'next/server';
 
-export function GET(request) {
-  // Manejar solicitudes GET
-  return NextResponse.json("funciona")
+export async function GET() {
+  return NextResponse.json({ ok: true });
 }
