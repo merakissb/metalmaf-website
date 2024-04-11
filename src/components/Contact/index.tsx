@@ -15,18 +15,25 @@ const Contact = () => {
 
   const [messageSent, setMessageSent] = useState(false);
   const [successMessage, setSuccessMessage] = useState('');
+  const [formFilled, setFormFilled] = useState(false);
+  const [submitting, setSubmitting] = useState(false); // Nuevo estado para controlar si se está enviando el formulario
 
   const handleChange = (e) => {
     setFormData({
       ...formData,
       [e.target.name]: e.target.value
     });
+    // Verificar si todos los campos están llenos
+    const filled = Object.values(formData).every(value => value.trim() !== '');
+    setFormFilled(filled);
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
 
     try {
+      setSubmitting(true); // Establecer submitting a true al comenzar el envío del formulario
+
       const response = await axios.post('/api/contact', formData, {
         headers: {
           'Content-Type': 'application/json'
@@ -41,6 +48,7 @@ const Contact = () => {
           email: '',
           message: ''
         });
+        setFormFilled(false); // Establecer formFilled a false después de limpiar los campos
         setTimeout(() => {
           setMessageSent(false);
           setSuccessMessage('');
@@ -50,6 +58,8 @@ const Contact = () => {
       }
     } catch (error) {
       console.error('Error al enviar el mensaje:', error);
+    } finally {
+      setSubmitting(false); // Establecer submitting a false después de que se haya completado el envío del formulario
     }
   };
 
@@ -132,8 +142,8 @@ const Contact = () => {
                     </div>
                   </div>
                   <div className="w-full px-4">
-                    <button type="submit" className="rounded-sm bg-primary px-9 py-4 text-base font-medium text-white shadow-submit duration-300 hover:bg-primary/90 dark:shadow-submit-dark">
-                      Enviar
+                    <button type="submit" disabled={!formFilled || submitting} className={`rounded-sm bg-primary px-9 py-4 text-base font-medium text-white shadow-submit duration-300 ${formFilled && !submitting ? 'hover:bg-primary/90' : 'opacity-50 cursor-not-allowed'}`}>
+                      {submitting ? 'Enviando...' : 'Enviar'}
                     </button>
                   </div>
                 </div>
