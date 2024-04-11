@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import axios from 'axios';
 import NewsLatterBox from './NewsLatterBox';
+import SectionTitle from '../Common/SectionTitle';
 
 const Contact = () => {
 
@@ -13,6 +14,7 @@ const Contact = () => {
   });
 
   const [messageSent, setMessageSent] = useState(false);
+  const [successMessage, setSuccessMessage] = useState('');
 
   const handleChange = (e) => {
     setFormData({
@@ -32,9 +34,17 @@ const Contact = () => {
       });
 
       if (response.status === 200) {
-        console.log('Mensaje enviado exitosamente');
+        setSuccessMessage('Gracias por escribirnos, te responderemos lo antes posible.');
         setMessageSent(true);
-        // Aquí puedes manejar cualquier lógica adicional después de enviar el mensaje
+        setFormData({
+          name: '',
+          email: '',
+          message: ''
+        });
+        setTimeout(() => {
+          setMessageSent(false);
+          setSuccessMessage('');
+        }, 5000); // Limpiar el mensaje después de 5 segundos
       } else {
         console.error('Error al enviar el mensaje');
       }
@@ -46,6 +56,12 @@ const Contact = () => {
   return (
     <section id="contact" className="overflow-hidden py-16 md:py-20 lg:py-28">
       <div className="container">
+        <SectionTitle
+          title="Contacto"
+          paragraph=''
+          center
+          mb='30px'
+        />
         <div className="-mx-4 flex flex-wrap">
           <div className="w-full px-4 lg:w-7/12 xl:w-8/12">
             <div
@@ -58,6 +74,7 @@ const Contact = () => {
               <p className="mb-12 text-base font-medium text-body-color">
                 Dejanos un mensaje y nos pondremos en contacto contigo, a la brevedad.
               </p>
+              {messageSent && <p className="text-green-500">{successMessage}</p>}
               <form onSubmit={handleSubmit}>
                 <div className="-mx-4 flex flex-wrap">
                   <div className="w-full px-4 md:w-1/2">
@@ -122,6 +139,9 @@ const Contact = () => {
                 </div>
               </form>
             </div>
+          </div>
+          <div className="w-full px-4 lg:w-5/12 xl:w-4/12">
+            <NewsLatterBox />
           </div>
         </div>
       </div>
