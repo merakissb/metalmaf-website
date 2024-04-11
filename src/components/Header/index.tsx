@@ -3,7 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
-import ThemeToggler from "./ThemeToggler";
+// import ThemeToggler from "./ThemeToggler";
 import menuData from "./menuData";
 
 const Header = () => {
@@ -46,6 +46,9 @@ const Header = () => {
             ? "dark:bg-gray-dark dark:shadow-sticky-dark fixed z-[9999] bg-white !bg-opacity-80 shadow-sticky backdrop-blur-sm transition"
             : "absolute bg-transparent"
         }`}
+        style={{
+          background: "linear-gradient(to right, black, #2a2991)",
+        }}
       >
         <div className="container">
           <div className="relative -mx-4 flex items-center justify-between">
@@ -56,7 +59,7 @@ const Header = () => {
                 } `}
               >
                 <Image
-                  src={"/images/logo/logo-dark.png"} // Cambiar la ruta del logo según el tema
+                  src={"/images/logo/logo-light.png"} // Cambiar la ruta del logo según el tema
                   alt="logo"
                   width={140}
                   height={30}
@@ -80,24 +83,24 @@ const Header = () => {
                   className="absolute right-4 top-1/2 block translate-y-[-50%] rounded-lg px-3 py-[6px] ring-primary focus:ring-2 lg:hidden"
                 >
                   <span
-                    className={`relative my-1.5 block h-0.5 w-[30px] bg-black transition-all duration-300 dark:bg-white ${
+                    className={`relative my-1.5 block h-0.5 w-[30px] bg-white transition-all duration-300 dark:bg-white ${
                       navbarOpen ? " top-[7px] rotate-45" : " "
                     }`}
                   />
                   <span
-                    className={`relative my-1.5 block h-0.5 w-[30px] bg-black transition-all duration-300 dark:bg-white ${
+                    className={`relative my-1.5 block h-0.5 w-[30px] bg-white transition-all duration-300 dark:bg-white ${
                       navbarOpen ? "opacity-0 " : " "
                     }`}
                   />
                   <span
-                    className={`relative my-1.5 block h-0.5 w-[30px] bg-black transition-all duration-300 dark:bg-white ${
+                    className={`relative my-1.5 block h-0.5 w-[30px] bg-white transition-all duration-300 dark:bg-white ${
                       navbarOpen ? " top-[-8px] -rotate-45" : " "
                     }`}
                   />
                 </button>
                 <nav
                   id="navbarCollapse"
-                  className={`navbar absolute right-0 z-30 w-[250px] rounded border-[.5px] border-body-color/50 bg-white px-6 py-4 duration-300 dark:border-body-color/20 dark:bg-dark lg:visible lg:static lg:w-auto lg:border-none lg:!bg-transparent lg:p-0 lg:opacity-100 ${
+                  className={`navbar absolute right-0 z-30 w-[250px] rounded border-[.5px] border-body-color/50 px-6 py-4 duration-300 dark:border-body-color/20 dark:bg-dark lg:visible lg:static lg:w-auto lg:border-none lg:!bg-transparent lg:p-0 lg:opacity-100 ${
                     navbarOpen
                       ? "visibility top-full opacity-100"
                       : "invisible top-[120%] opacity-0"
@@ -111,8 +114,8 @@ const Header = () => {
                             href={menuItem.path}
                             className={`flex py-2 text-base lg:mr-0 lg:inline-flex lg:px-0 lg:py-6 ${
                               usePathName === menuItem.path
-                                ? "text-primary dark:text-white"
-                                : "text-dark hover:text-primary dark:text-white/70 dark:hover:text-white"
+                                ? "text-white hover:text-primary dark:text-white/70 dark:hover:text-white"
+                                : "text-white hover:text-primary dark:text-white/70 dark:hover:text-white"
                             }`}
                           >
                             {menuItem.title}
