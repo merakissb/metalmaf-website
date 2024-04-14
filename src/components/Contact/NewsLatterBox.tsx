@@ -17,12 +17,12 @@ const NewsLatterBox = () => {
         Camino las Higueras Parcela 29, Sitio 9, Lampa
       </p>
 
-      <p className="mb-2 font-bold leading-tight text-black dark:text-white">
+      {/* <p className="mb-2 font-bold leading-tight text-black dark:text-white">
         Oficina
       </p>
       <p className="mb-4 text-base leading-relaxed text-body-color dark:text-body-color-dark">
         Los Cuculies #6820, Huechuraba
-      </p>
+      </p> */}
 
       <p className="mb-2 font-bold leading-tight text-black dark:text-white">
         Celular
