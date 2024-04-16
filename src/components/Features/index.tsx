@@ -9,8 +9,9 @@ const Features = () => {
         <div className="container">
           <SectionTitle
             title="Servicios"
-            paragraph="Nuestro objetivo principal es ayudar a nuestros clientes a desarrollar sus proyectos de forma rápida y profesional, manteniendo un estándar de calidad alta en la manufactura.
-            Contamos con maquinarias de precisión y un equipo de trabajo especializado en metalurgia, pintura y desarrollos productivos."
+            // paragraph="Nuestro objetivo principal es ayudar a nuestros clientes a desarrollar sus proyectos de forma rápida y profesional, manteniendo un estándar de calidad alta en la manufactura.
+            // Contamos con maquinarias de precisión y un equipo de trabajo especializado en metalurgia, pintura y desarrollos productivos."
+            paragraph=""
             center
           />
 
